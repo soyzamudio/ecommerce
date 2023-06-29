@@ -15,6 +15,11 @@ const config: CodegenConfig = {
         "typescript",
         "typescript-operations",
         "typescript-graphql-request",
+        {
+          add: {
+            content: '// @ts-nocheck',
+          },
+        },
       ],
       config: {
         rawRequest: true, // includes data and errors
@@ -22,6 +27,11 @@ const config: CodegenConfig = {
       },
     },
   },
+  // hooks: {
+  //   afterOneFileWrite: [
+  //     'sed -i -e"s|graphql-request/dist/types\.dom|graphql-request/src/types.dom|g"'
+  //   ]
+  // }
 };
 
 export default config;
