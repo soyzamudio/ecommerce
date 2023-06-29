@@ -1,0 +1,32 @@
+# Returns 10 categories per page, starting on page 2.
+query getCategories {
+  categories {
+    results {
+      name
+      slug
+    }
+  }
+}
+
+# Returns categories and their images by slug.
+query getCategoryPreviewData($slug: String!) {
+  categoryBySlug(slug: $slug, _locale: "es-MX") {
+    name
+    slug
+    products {
+      id
+      name
+      slug
+      price
+      currency
+    }
+    images {
+      caption
+      file {
+        url
+        width
+        height
+      }
+    }
+  }
+}

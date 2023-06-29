@@ -1,0 +1,5 @@
+schema:
+  - https://coracosmetics.swell.store/graphql:
+      headers:
+        Authorization: "pk_ZUb02oMLQ1vp6XgXTUUUUJWeieKWy4xg"
+documents: src/**/*.{graphql,gql,js,ts,jsx,tsx}

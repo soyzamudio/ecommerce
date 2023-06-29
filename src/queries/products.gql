@@ -1,0 +1,165 @@
+query getAllProducts($limit: Int, $page: Int) {
+  products(limit: $limit, page: $page) {
+    count
+    results {
+      id
+      name
+      description
+      slug
+      price
+      sale
+      salePrice
+      origPrice
+      currency
+      attributes
+      categories {
+        name
+        slug
+      }
+      images {
+        caption
+        file {
+          width
+          height
+          url
+        }
+      }
+      options {
+        id
+        attributeId
+        name
+        inputType
+        active
+        required
+        variant
+        values {
+          id
+          name
+          price
+          description
+        }
+      }
+      purchaseOptions {
+        standard {
+          price
+          sale
+          salePrice
+          origPrice
+        }
+        subscription {
+          plans {
+            id
+            name
+            price
+            billingSchedule {
+              interval
+              intervalCount
+            }
+          }
+        }
+      }
+      variants {
+        results {
+          id
+          name
+          price
+          origPrice
+          prices {
+            price
+            discountPercent
+            quantityMin
+            quantityMax
+            accountGroup
+          }
+          images {
+            id
+            caption
+            file {
+              url
+              width
+              height
+            }
+          }
+          optionValueIds
+          purchaseOptions {
+            standard {
+              price
+              sale
+              salePrice
+              origPrice
+              prices {
+                price
+                discountPercent
+                quantityMin
+                quantityMax
+                accountGroup
+              }
+            }
+          }
+          stockLevel
+          currency
+        }
+      }
+    }
+  }
+}
+
+query getProductBySlug($slug: String!) {
+  productBySlug(slug: $slug) {
+    name
+    id
+    options {
+      price
+    }
+    images {
+      file {
+        url
+      }
+    }
+  }
+}
+
+query getProductsVariants {
+  products {
+    results {
+      id
+      name
+      slug
+      variants {
+        results {
+          name
+          sku
+          prices {
+            price
+            discountPercent
+          }
+          purchaseOptions {
+            standard {
+              price
+              sale
+              salePrice
+              prices {
+                price
+                discountPercent
+              }
+            }
+          }
+          stockLevel
+          currency
+        }
+      }
+    }
+  }
+}
+
+query searchProducts($search: String!, $limit: Int, $page: Int) {
+  products(search: $search, limit: $limit, page: $page) {
+    results {
+      id
+      name
+      currency
+      slug
+      price
+    }
+  }
+}
