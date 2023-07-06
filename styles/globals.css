@@ -22,3 +22,42 @@ a:hover {
   background-clip: border-box;
   background-size: 20px 20px;
 }
+
+.gradient {
+  background-size: 400% 400%;
+  animation: bg-animate 8s ease infinite;
+}
+
+@-webkit-keyframes bg-animate {
+  0% {
+    background-position: 0% 27%;
+  }
+  50% {
+    background-position: 100% 74%;
+  }
+  100% {
+    background-position: 0% 27%;
+  }
+}
+@-moz-keyframes bg-animate {
+  0% {
+    background-position: 0% 27%;
+  }
+  50% {
+    background-position: 100% 74%;
+  }
+  100% {
+    background-position: 0% 27%;
+  }
+}
+@keyframes bg-animate {
+  0% {
+    background-position: 0% 27%;
+  }
+  50% {
+    background-position: 100% 74%;
+  }
+  100% {
+    background-position: 0% 27%;
+  }
+}

@@ -10,8 +10,8 @@ const Home = async () => {
         <div className="z-10 relative">
           <Hero />
         </div>
-        <div className="absolute bottom-0 bg-gradient-to-bl from-off-white via-transparent to-off-white h-full w-full z-0"></div>
-        <div className="absolute bottom-0 bg-gradient-to-br from-transparent via-off-white to-transparent opacity-75 h-full w-full z-0"></div>
+        <div className="gradient absolute bottom-0 bg-gradient-to-bl from-off-white via-transparent to-off-white h-full w-full z-0"></div>
+        <div className="gradient absolute bottom-0 bg-gradient-to-br from-transparent via-off-white to-transparent opacity-75 h-full w-full z-0"></div>
       </section>
 
       <Popular />
