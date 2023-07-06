@@ -1,3 +1,4 @@
+import { NEXT_URL } from "@lib/constants/global";
 import Link from "next/link";
 import Script from "next/script";
 import { Product } from "swell-js";
@@ -11,22 +12,22 @@ const Breadcrumbs = ({ product }: { product: Product }) => {
         "@type": "ListItem",
         position: index + 2,
         name: category.name,
-        item: `https://localhost:3000/productos/${category.slug}`,
+        item: `${NEXT_URL}/productos/${category.slug}`,
       });
     });
 
     itemList.unshift({
       "@type": "ListItem",
       position: 1,
-      name: "Produdctos",
-      item: "https://localhost:3000/productos",
+      name: "Productos",
+      item: `${NEXT_URL}/productos`,
     });
 
     itemList.push({
       "@type": "ListItem",
       position: itemList.length + 1,
       name: product.name,
-      item: `https://localhost:3000/detalles/${product.slug}`,
+      item: `${NEXT_URL}/detalles/${product.slug}`,
     });
 
     const schema = {
