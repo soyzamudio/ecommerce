@@ -14,7 +14,7 @@ const FeaturedCard = ({ product }: { product: any }) => {
       <div className="text-sm">
         {product.tags?.length ? product.tags[0] : product.type}
       </div>
-      <h2 className="font-fancy text-2xl truncate w-full">{product.name}</h2>
+      <h2 className="font-semibold text-lg w-full">{product.name}</h2>
     </div>
   );
 };

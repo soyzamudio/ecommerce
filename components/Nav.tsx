@@ -40,7 +40,7 @@ const Nav = () => {
           <Link href="/" className="bg-white rounded-full p-2">
             <User size={18} />
           </Link>
-          <Link href="/" className="bg-white rounded-full p-2">
+          <Link href="/carrito" className="bg-white rounded-full p-2">
             <ShoppingBag size={18} />
           </Link>
         </div>

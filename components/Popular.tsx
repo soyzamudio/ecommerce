@@ -3,12 +3,14 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
 import FeaturedCard from "./FeaturedCard";
+import { getProducts } from "@lib/products";
+import { Product } from "swell-js";
 
 const Popular = () => {
-  const [popular, setPopular] = useState([]);
+  const [popular, setPopular] = useState<Product[]>([]);
 
   const getPopularProducts = async () => {
-    const res = await (await fetch("/api/products/popular")).json();
+    const res = await getProducts({ limit: 5 });
     setPopular(res.results);
   };
 

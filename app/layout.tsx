@@ -25,9 +25,9 @@ const RootLayout: FC<LayoutProps> = ({ children }) => {
       lang="es"
       className={`${classicalRomance.variable} bg-off-white h-screen`}
     >
-      <body>
+      <body className="flex flex-col h-full">
         <Nav />
-        <main>{children}</main>
+        <main className="flex flex-col flex-1 w-full">{children}</main>
         <Footer />
       </body>
     </html>

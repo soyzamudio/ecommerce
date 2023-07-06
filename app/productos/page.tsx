@@ -1,28 +1,34 @@
-"use client";
-
 import ProductCard from "@components/ProductCard";
-import client from "@lib/client";
+import { categorySEOText } from "@lib/constants/categories";
+import { getProducts } from "@lib/products";
 
-const LIMIT = 20;
+const ProductPage = async ({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
+  let category;
+  if (searchParams?.category) {
+    category = searchParams?.category as string;
+  }
 
-const getAllProducts = async (limit: number, page: number) => {
-  const res = await client.getAllProducts({
-    limit,
-    page,
-  });
-  return res.data.products;
-};
+  const products = await getProducts({ category });
 
-const ProductPage = async () => {
-  const page = 1;
-  const data = await getAllProducts(LIMIT, page);
   return (
-    <section className="container">
-      <div className="flex gap-2 flex-wrap items-start justify-start">
-        {data?.results?.map((product, key) => (
-          <ProductCard product={product} key={key} />
-        ))}
+    <section className="flex flex-col gap-y-12 text-sm text-gray-500">
+      <div className="container">
+        <div className="flex gap-2 flex-wrap items-start justify-start">
+          {products?.results.map((product: any, key: number) => (
+            <ProductCard product={product} key={key} />
+          ))}
+        </div>
       </div>
+      <div
+        className="container flex flex-col gap-4"
+        dangerouslySetInnerHTML={{
+          __html: categorySEOText[category as string] || "",
+        }}
+      ></div>
     </section>
   );
 };
