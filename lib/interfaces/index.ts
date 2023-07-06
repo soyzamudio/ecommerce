@@ -13,3 +13,13 @@ export interface MegaMenu {
     href?: string;
   }
   
+  export interface CategoryTree {
+    header: string;
+    items: CategoryTreeItem[];
+  }
+  
+  export interface CategoryTreeItem {
+    label: string;
+    value: string;
+  }
+  

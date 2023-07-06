@@ -1,3 +1,81 @@
+import { CategoryTree } from "@lib/interfaces";
+
+export const categoryTree: CategoryTree[] = [
+  {
+    header: 'Tipo de Producto',
+    items: [
+        {
+            label: 'Limpiadores',
+            value: 'limpiadores',
+        },
+        {
+            label: 'Exfoliantes',
+            value: 'exfoliantes',
+        },
+
+        {
+            label: 'Sueros',
+            value: 'sueros',
+        },
+        {
+            label: 'Mascarillas',
+            value: 'mascarillas',
+        },
+        {
+            label: 'Protección Solar',
+            value: 'protector-solar',
+        },
+        {
+            label: 'Aceites Faciales',
+            value: 'aceites-faciales',
+        },
+        {
+            label: 'Tónicos',
+            value: 'tonicos',
+        },
+    ],
+  },
+  {
+    header: 'Tipo de Piel',
+    items: [
+        {
+            label: 'Piel Grasa',
+            value: 'piel-grasa',
+        },
+        {
+            label: 'Piel Seca',
+            value: 'piel-seca',
+        },
+        {
+            label: 'Piel Mixta',
+            value: 'piel-mixta',
+        },
+    ],
+  },
+  {
+    header: 'Momento de Uso',
+    items: [
+        {
+            label: '1º: Limpieza',
+            value: 'limpiadores',
+        },
+        {
+            label: '2º: Hidratación',
+            value: 'hidratantes',
+        },
+        {
+            label: '3º: Humectación',
+            value: 'humectacion',
+        },
+        {
+            label: '4º: Protección Solar',
+            value: 'protector-solar',
+        },
+    ],
+  }
+];
+
+
 export const categorySEOText: { [key: string]: string } = {
   limpiadores: `
     <p>
