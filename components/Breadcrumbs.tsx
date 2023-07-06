@@ -12,7 +12,7 @@ const Breadcrumbs = ({ product }: { product: Product }) => {
         "@type": "ListItem",
         position: index + 2,
         name: category.name,
-        item: `${NEXT_URL}/productos/${category.slug}`,
+        item: `${NEXT_URL}/productos?category=${category.slug}`,
       });
     });
 
