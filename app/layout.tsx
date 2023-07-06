@@ -4,6 +4,7 @@ import "@styles/globals.css";
 import localFont from "next/font/local";
 import Nav from "@components/Nav";
 import Footer from "@components/Footer";
+import { NEXT_URL } from "@lib/constants/global";
 
 interface LayoutProps {
   children?: ReactNode;
@@ -19,7 +20,23 @@ export const metadata: Metadata = {
     template: "Ciclo Dispensary | %s",
     default: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
   },
-  description: "...",
+  description: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: `${NEXT_URL}`,
+    siteName: "Ciclo Dispensary",
+    title: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+    description: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+    images: [
+      {
+        url: `${NEXT_URL}/images/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+      },
+    ],
+  },
 };
 
 const RootLayout: FC<LayoutProps> = ({ children }) => {
