@@ -15,7 +15,7 @@ const Nav = () => {
             </Link>
             <MegaMenu columns={MENU_PRODUCTS_ITEMS.columns} />
           </div>
-          <Link href="/" className="font-fancy">
+          <Link href="/dispensary-plus" className="font-fancy">
             Dispensary+
           </Link>
           <Link href="/">Blog</Link>
