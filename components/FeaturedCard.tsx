@@ -1,8 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const FeaturedCard = ({ product }: { product: any }) => {
   return (
-    <div className="flex flex-col w-[240px] min-w-[240px]">
+    <Link
+      href={`/detalles/${product.slug}`}
+      className="flex flex-col w-[240px] min-w-[240px]"
+    >
       <div className="relative object-contain h-[300px] w-full rounded-lg aspect-auto">
         <Image
           src={product.images[0].file.url}
@@ -11,11 +15,13 @@ const FeaturedCard = ({ product }: { product: any }) => {
           alt="product_iamge"
         />
       </div>
-      <div className="text-sm">
+      <div className="text-sm capitalize text-gray-400 mt-2 text-center">
         {product.tags?.length ? product.tags[0] : product.type}
       </div>
-      <h2 className="font-semibold text-lg w-full">{product.name}</h2>
-    </div>
+      <h2 className="font-semibold text-lg w-full text-center">
+        {product.name}
+      </h2>
+    </Link>
   );
 };
 

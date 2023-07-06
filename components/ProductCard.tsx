@@ -1,10 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingCart } from "lucide-react";
+import { getProductBySlug } from "@lib/products";
 
-const ProductCard = ({ product }: { product: any }) => {
+const ProductCard = async ({
+  product,
+  productId,
+}: {
+  product?: any;
+  productId?: string;
+}) => {
+  if (productId && !product) {
+    product = await getProductBySlug(productId);
+  }
+
   return (
-    <div className="bg-white border border-gray-100 shadow-sm hover:border-gray-200 w-[180px] md:w-[200px] p-3 flex flex-col justify-start rounded-md gap-3">
+    <div className="relative bg-white border border-gray-100 shadow-sm hover:border-gray-200 w-[180px] md:w-[200px] p-3 flex flex-col justify-start rounded-md gap-3 overflow-hidden">
+      {product.sale ? (
+        <div className="absolute transform -rotate-45 top-5 -left-7 z-30 px-8 py-1 bg-red-500 text-white text-xs shadow select-none">
+          Descuento
+        </div>
+      ) : null}
       <div className="relative object-contain w-full aspect-[3/4] items-start group">
         <Link href={`/detalles/${product.slug}`}>
           <Image

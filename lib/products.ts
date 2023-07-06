@@ -34,4 +34,5 @@ export function getProductBySlug(slug: string) {
   return swell.products.get(slug, {
     expand: ["variants", "categories"],
   });
+  
 }

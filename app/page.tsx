@@ -6,7 +6,12 @@ import Image from "next/image";
 const Home = async () => {
   return (
     <>
-      <Hero />
+      <section className="relative hero">
+        <div className="z-10 relative">
+          <Hero />
+        </div>
+        <div className="absolute bottom-0 bg-gradient-to-bl from-off-white via-transparent to-off-white h-full w-full z-0"></div>
+      </section>
 
       <Popular />
 
