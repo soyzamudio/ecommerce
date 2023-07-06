@@ -6,6 +6,10 @@ h1 {
   @apply text-7xl font-fancy;
 }
 
+a {
+  @apply text-gray-700;
+}
+
 a:hover {
-  @apply text-sage;
+  @apply text-black;
 }

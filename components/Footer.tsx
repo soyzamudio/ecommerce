@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer>
       <section className="h-[150px] flex items-center justify-center font-fancy text-2xl leading-none">
-        <Link href="/">
+        <Link href="/" className="hover:text-black">
           <div>ciclo</div>
           <div>dispensary</div>
         </Link>

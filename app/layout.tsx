@@ -15,7 +15,10 @@ const classicalRomance = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ciclo Dispensary - Cuidamos tu piel y sus ciclos",
+  title: {
+    template: "Ciclo Dispensary | %s",
+    default: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+  },
   description: "...",
 };
 

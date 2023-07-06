@@ -22,7 +22,7 @@ const Nav = () => {
           <Link href="/">Nosotros</Link>
         </div>
         <div className="font-fancy flex flex-col flex-[.5] text-2xl items-center justify-center leading-none">
-          <Link href="/">
+          <Link href="/" className="hover:text-black">
             <div>ciclo</div>
             <div>dispensary</div>
           </Link>
