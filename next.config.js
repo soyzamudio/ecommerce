@@ -2,7 +2,7 @@
 
 const nextConfig = {
   images: {
-    domains: ["localhost", "cdn.schema.io", "cdn.swell.store"],
+    domains: ["localhost", "cdn.schema.io", "cdn.swell.store", "placehold.co"],
   },
   experimental: {
     legacyBrowsers: false,

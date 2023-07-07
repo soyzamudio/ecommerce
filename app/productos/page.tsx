@@ -18,15 +18,15 @@ const ProductPage = async ({
     <section className="flex flex-col gap-y-12 text-sm text-gray-500">
       <div className="container py-6 md:py-12 mx-auto">
         <div className="grid grid-cols-5">
-          <div className="hidden col-span-1 md:flex flex-col gap-y-4">
-            {categoryTree.map((category, index) => (
-              <div key={index}>
+          <div className="hidden col-span-1 md:flex flex-col gap-y-6 pr-20">
+            {categoryTree.map((category, key) => (
+              <div key={key} className="border-b border-gray-400 pb-4">
                 <h3 className="font-bold text-lg mb-2 text-gray-700">
                   {category.header}
                 </h3>
                 <ul className="flex flex-col gap-y-2">
-                  {category.items.map((subcategory, index) => (
-                    <li key={index}>
+                  {category.items.map((subcategory, subKey) => (
+                    <li key={subKey}>
                       <a
                         href={`/productos?category=${subcategory.value}`}
                         className="hover:text-gray-700"
@@ -40,9 +40,9 @@ const ProductPage = async ({
             ))}
           </div>
           <div className="col-span-5 md:col-span-4">
-            <div className="grid grid-cols-2 md:flex gap-4 flex-wrap items-start justify-start">
+            <div className="grid grid-cols-2 md:flex gap-4 flex-wrap">
               {products?.results.map((product: any, key: number) => (
-                <div className="col-span-1">
+                <div className="col-span-1 flex">
                   <ProductCard product={product} key={key} />
                 </div>
               ))}

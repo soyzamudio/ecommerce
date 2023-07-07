@@ -1,7 +1,9 @@
 import Button from "@components/Button";
 import Hero from "@components/Hero";
 import Popular from "@components/Popular";
+import { SKIN_TYPES } from "@lib/constants/global";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home = async () => {
   return (
@@ -45,6 +47,36 @@ const Home = async () => {
 
       {/* Reviews */}
       <section className="w-full bg-sage h-[500px]"></section>
+
+      <section className="flex items-center justify-center w-full py-12 md:py-24">
+        <div className="container mx-auto flex flex-col gap-y-12">
+          <div className="flex justify-center items-center">
+            <h1 className="text-4xl md:text-5xl">Tipos de Piel</h1>
+          </div>
+          <div className="flex gap-x-8 w-full overflow-auto justify-start md:justify-evenly">
+            {SKIN_TYPES.map((type, key) => (
+              <Link
+                href={type.url}
+                key={key}
+                className="flex flex-col w-[240px] min-w-[240px] items-center gap-y-2"
+              >
+                <div className="relative object-contain h-[300px] w-full rounded-lg aspect-auto">
+                  <Image
+                    src={"https://placehold.co/600x400.png"}
+                    fill
+                    className="object-cover rounded-3xl"
+                    alt="product_iamge"
+                  />
+                </div>
+                <h1 className="text-2xl">{type.label}</h1>
+              </Link>
+            ))}
+          </div>
+          <div className="flex items-center justify-center">
+            <Button label="Ver todos" href="/productos" />
+          </div>
+        </div>
+      </section>
     </>
   );
 };

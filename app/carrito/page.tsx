@@ -1,9 +1,9 @@
-import { getCart } from "@lib/cart";
-
-const CartPage = async () => {
-  const res = await getCart();
-  console.log("CARRITO", res);
-  return <div>Cart</div>;
+const page = () => {
+  return (
+    <>
+      <section className="container ">Carrito</section>
+    </>
+  );
 };
 
-export default CartPage;
+export default page;

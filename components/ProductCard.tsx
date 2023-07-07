@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingCart } from "lucide-react";
+import { Eye, Heart, ShoppingCart } from "lucide-react";
 import { getProductBySlug } from "@lib/products";
 
 const ProductCard = async ({
@@ -15,7 +15,7 @@ const ProductCard = async ({
   }
 
   return (
-    <div className="relative bg-white border border-gray-100 shadow-sm hover:border-gray-200 w-[180px] md:w-[200px] p-3 flex flex-col justify-start rounded-md gap-3 overflow-hidden">
+    <div className="relative bg-white border border-gray-100 shadow-sm hover:border-gray-200 w-[220px] md:w-[200px] p-3 flex flex-col justify-start rounded-md gap-3 overflow-hidden">
       {product.sale ? (
         <div className="absolute transform -rotate-45 top-5 -left-7 z-30 px-8 py-1 bg-red-500 text-white text-xs shadow select-none">
           Descuento
@@ -37,14 +37,17 @@ const ProductCard = async ({
           href={`/detalles/${product.slug}`}
           className="absolute bottom-2 ml-[5%] w-[90%] px-3 py-2 flex justify-between z-40 text-sm bg-gray-200 bg-opacity-30 hover:bg-opacity-80 hover:-translate-y-1 backdrop-blur-md rounded-lg invisible group-hover:visible items-center font-semibold transition-[backgroundColor,_transform] ease-in-out duration-500 hover:shadow-lg"
         >
-          <div>Agregar</div>
-          <ShoppingCart size={16} strokeWidth={2} />
+          <div>Vista Rapida</div>
+          <Eye size={16} strokeWidth={2} />
         </Link>
         <div className="absolute right-2 top-2 z-40 bg-white bg-opacity-30 hover:bg-opacity-50 backdrop-blur-lg p-1.5 rounded-lg transition-backgroundColor ease-in-out duration-500 hover:shadow-lg cursor-pointer">
           <Heart size={14} />
         </div>
       </div>
-      <div className="flex flex-col gap-y-1 text-sm font-bold text-gray-700">
+      <Link
+        href={`/detalles/${product.slug}`}
+        className="flex flex-col gap-y-1 text-sm font-bold text-gray-700 flex-1 justify-between"
+      >
         <h1 className="text-sm font-sans">{product.name}</h1>
         <div className="flex font-semibold items-center gap-x-2">
           {product.sale ? (
@@ -63,7 +66,7 @@ const ProductCard = async ({
               : product.price?.toLocaleString()}
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

@@ -19,13 +19,13 @@ const Popular = () => {
   }, []);
 
   return (
-    <section className="h-[550px] md:h-[600px] flex items-center justify-center w-full">
+    <section className="flex items-center justify-center w-full py-12 md:py-24">
       <div className="container mx-auto flex flex-col gap-y-8">
         <div className="flex justify-between items-center">
           <h1 className="text-4xl md:text-5xl">Populares</h1>
           <Button label="Ver todos" href="/productos" />
         </div>
-        <div className="flex gap-x-8 w-full overflow-scroll">
+        <div className="flex gap-x-8 w-full overflow-auto">
           {popular.map((product, key) => (
             <FeaturedCard key={key} product={product} />
           ))}
