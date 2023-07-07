@@ -75,6 +75,33 @@ export const categoryTree: CategoryTree[] = [
   }
 ];
 
+export const categoryShortDescription: { [key: string]: string } = {
+  limpiadores: 'Nuestros Limpiadores Faciales son esenciales para mantener una piel saludable y radiante. Formulados para diferentes tipos de piel, estos limpiadores eliminan eficazmente las impurezas y el exceso de grasa, dejando la piel fresca y preparada para los siguientes pasos de tu rutina de cuidado de la piel.',
+  exfoliantes: 'Nuestros Exfoliantes Faciales son clave para una piel radiante y saludable. Diseñados para eliminar suavemente las células muertas de la piel, nuestros exfoliantes revelan una tez más suave, más brillante y de aspecto más joven.',
+  sueros: 'Nuestro Suero Revitalizante es un imprescindible para cualquier rutina de cuidado de la piel, formulado para proporcionar una hidratación intensa y mejorar la textura y el tono de la piel. Este suero penetra profundamente para revitalizar la piel cansada, dejándola con un aspecto fresco y juvenil.',
+  mascarillas: 'Nuestras Mascarillas Faciales son el tratamiento perfecto para tu piel, proporcionando una nutrición intensa y beneficios específicos según tus necesidades. Desde hidratación profunda hasta limpieza de poros, nuestras mascarillas faciales te ayudarán a lograr una piel saludable y radiante.',
+  'protector-solar': 'Nuestro Protector Solar Facial es tu aliado perfecto para proteger tu piel de los daños del sol. Con una fórmula ligera y de rápida absorción, ofrece protección de amplio espectro contra los rayos UVA y UVB, manteniendo tu piel saludable y preveniendo el envejecimiento prematuro.',
+  'aceites-faciales': 'Nuestros Aceites Faciales son una adición lujosa a cualquier rutina de cuidado de la piel. Formulados para nutrir e hidratar, estos aceites penetran profundamente para suavizar, revitalizar y dar un brillo saludable a tu piel.',
+  tonicos: 'Nuestros Tónicos Faciales son el paso perfecto después de la limpieza para equilibrar y refrescar tu piel. Estos tónicos eliminan cualquier residuo restante, preparando tu piel para los tratamientos posteriores y dejándola con una sensación de frescura y limpieza.',
+  'piel-grasa': 'Controla el brillo y equilibra tu piel con nuestros productos especialmente diseñados para la piel grasa. Experimenta una piel más suave y menos grasa con cada uso.',
+  'piel-seca': 'Descubre el alivio y la hidratación intensiva con nuestros productos para el cuidado de la piel seca. Diseñados para nutrir y reparar, devuelven la vitalidad a tu piel, dejándola suave y radiante.',
+  'piel-mixta': 'Para aquellos con piel mixta, encontrar el equilibrio perfecto en su rutina de cuidado de la piel puede ser un desafío. Nuestros productos están diseñados para hidratar las áreas secas y controlar el brillo en las zonas grasas, proporcionando un cutis equilibrado y radiante.',
+  default: 'Descubre la gama completa de nuestros productos de cuidado facial, diseñados para nutrir, proteger y mejorar tu piel. Desde limpiadores y tónicos hasta sueros y protectores solares, tenemos todo lo que necesitas para una piel saludable y radiante'
+};
+
+export const categoryTitle: { [key: string]: string } = {
+  limpiadores: 'Limpiadores',
+  exfoliantes: 'Exfoliantes',
+  sueros: 'Sueros',
+  mascarillas: 'Mascarillas',
+  'protector-solar': 'Protector Solar',
+  'aceites-faciales': 'Aceites Faciales',
+  tonicos: 'Tónicos',
+  'piel-grasa': 'Piel Grasa',
+  'piel-seca': 'Piel Seca',
+  'piel-mixta': 'Piel Mixta',
+};
+
 
 export const categorySEOText: { [key: string]: string } = {
   limpiadores: `

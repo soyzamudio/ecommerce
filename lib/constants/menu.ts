@@ -38,7 +38,6 @@ export const MENU_PRODUCTS_ITEMS: MegaMenu = {
           { title: 'Limpiadores', href: '/productos?category=limpiadores' },
           { title: 'Exfoliantes', href: '/productos?category=exfoliantes' },
           { title: 'Tónicos', href: '/productos?category=tonicos' },
-          { title: 'Cremas', href: '/productos?category=cremas' },
           { title: 'Sueros', href: '/productos?category=sueros' },
           { title: 'Mascarillas', href: '/productos?category=mascarillas' },
           { title: 'Protección Solar', href: '/productos?category=protector-solar' },

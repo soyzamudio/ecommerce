@@ -8,7 +8,7 @@ import Link from "next/link";
 const Home = async () => {
   return (
     <>
-      <section className="relative hero">
+      <section className="relative pattern--white">
         <div className="z-10 relative">
           <Hero />
         </div>
@@ -46,7 +46,10 @@ const Home = async () => {
       </section>
 
       {/* Reviews */}
-      <section className="w-full bg-sage h-[500px]"></section>
+      <section className="relative pattern--green h-[500px]">
+        <div className="gradient absolute bottom-0 bg-gradient-to-bl from-sage via-transparent to-sage h-full w-full z-0"></div>
+        <div className="gradient absolute bottom-0 bg-gradient-to-br from-transparent via-sage to-transparent opacity-90 h-full w-full z-0"></div>
+      </section>
 
       <section className="flex items-center justify-center w-full py-12 md:py-24">
         <div className="container mx-auto flex flex-col gap-y-12">

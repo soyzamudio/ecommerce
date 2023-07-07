@@ -42,8 +42,8 @@ const Nav = () => {
           <Link href="/dispensary-plus" className="font-fancy">
             Dispensary+
           </Link>
-          <Link href="/">Blog</Link>
-          <Link href="/">Nosotros</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/nosotros">Nosotros</Link>
         </div>
         <div className="font-fancy flex flex-col flex-[.5] text-2xl items-center justify-center leading-none">
           <Link href="/" className="hover:text-black">

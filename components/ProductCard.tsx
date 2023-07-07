@@ -35,7 +35,7 @@ const ProductCard = async ({
         </Link>
         <Link
           href={`/detalles/${product.slug}`}
-          className="absolute bottom-2 ml-[5%] w-[90%] px-3 py-2 flex justify-between z-40 text-sm bg-gray-200 bg-opacity-30 hover:bg-opacity-80 hover:-translate-y-1 backdrop-blur-md rounded-lg invisible group-hover:visible items-center font-semibold transition-[backgroundColor,_transform] ease-in-out duration-500 hover:shadow-lg"
+          className="absolute bottom-2 ml-[5%] w-[90%] px-3 py-2 flex justify-between z-40 text-xs bg-gray-200 bg-opacity-30 hover:bg-opacity-80 hover:-translate-y-1 backdrop-blur-md rounded-lg invisible group-hover:visible items-center font-semibold transition-[backgroundColor,_transform] ease-in-out duration-500 hover:shadow-lg"
         >
           <div>Vista Rapida</div>
           <Eye size={16} strokeWidth={2} />

@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Image as iImage } from "swell-js";
 
 const ProductImages = ({ images }: { images: iImage[] }) => {
-  console.log(images);
   const [mainImage, setMainImage] = useState(images[0]);
 
   function selectMainImage(image: iImage) {
