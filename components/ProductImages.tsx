@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Image as iImage } from "swell-js";
 
 const ProductImages = ({ images }: { images: iImage[] }) => {
+  console.log(images);
   const [mainImage, setMainImage] = useState(images[0]);
 
   function selectMainImage(image: iImage) {
@@ -14,9 +15,10 @@ const ProductImages = ({ images }: { images: iImage[] }) => {
   return (
     <div className="grid grid-cols-6 gap-x-2">
       <div className="col-span-1">
-        <div className="relative w-full aspect-square flex flex-col gap-y-4">
+        <div className="relative w-full flex flex-col gap-y-2">
           {images.map((image, index) => (
             <div
+              className="relative aspect-square object-contain"
               key={index}
               onClick={() => {
                 selectMainImage(image);
@@ -35,8 +37,9 @@ const ProductImages = ({ images }: { images: iImage[] }) => {
         </div>
       </div>
       <div className="col-span-5">
-        <div className="relative aspect-square w-full">
+        <div className="relative aspect-square w-full object-contain">
           <Image
+            className="tranisition-all duration-500 ease-in-out"
             src={mainImage.file?.url as string}
             fill
             alt={mainImage.caption as string}
