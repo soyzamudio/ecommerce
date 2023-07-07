@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        "4xl": "2rem",
+      },
       gridTemplateColumns: {
         menu: "auto repeat(2, minmax(0, 1fr))",
       },

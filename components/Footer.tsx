@@ -16,9 +16,9 @@ const Footer = () => {
         </Link>
       </section>
       <section className="bg-footer py-8 pb-28">
-        <div className="grid grid-cols-5 container mx-auto">
-          <div className="col-span-3 grid grid-cols-3">
-            <div className="col-span-1">
+        <div className="grid grid-cols-5 container mx-auto gap-y-8">
+          <div className="col-span-5 md:col-span-3 grid grid-cols-3 order-2 gap-y-6">
+            <div className="col-span-3 md:col-span-1">
               <h2 className="font-fancy text-lg mb-4">Compañía</h2>
               <div className="flex flex-col gap-y-2">
                 <div>Acerca de nosotros</div>
@@ -26,7 +26,7 @@ const Footer = () => {
                 <div>Tarjeta de regalo</div>
               </div>
             </div>
-            <div className="col-span-1">
+            <div className="col-span-3 md:col-span-1">
               <h2 className="font-fancy text-lg mb-4">Ayuda</h2>
               <div className="flex flex-col gap-y-2">
                 <div>Preguntas frecuentes</div>
@@ -34,7 +34,7 @@ const Footer = () => {
                 <div>Facturar pedido</div>
               </div>
             </div>
-            <div className="col-span-1">
+            <div className="col-span-3 md:col-span-1">
               <h2 className="font-fancy text-lg mb-4">Contacto</h2>
               <div className="flex flex-col gap-y-2">
                 <div>Contactanos</div>
@@ -42,7 +42,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-2">
+          <div className="col-span-5 md:col-span-2 order-1">
             <div className="flex flex-col items-end justify-center gap-y-4">
               <h2 className="font-fancy text-xl">
                 Suscribete para recibir actualizaciones y ofertas

@@ -16,9 +16,9 @@ const ProductPage = async ({
 
   return (
     <section className="flex flex-col gap-y-12 text-sm text-gray-500">
-      <div className="container py-12 mx-auto">
+      <div className="container py-6 md:py-12 mx-auto">
         <div className="grid grid-cols-5">
-          <div className="col-span-1 flex flex-col gap-y-4">
+          <div className="hidden col-span-1 md:flex flex-col gap-y-4">
             {categoryTree.map((category, index) => (
               <div key={index}>
                 <h3 className="font-bold text-lg mb-2 text-gray-700">
@@ -39,10 +39,12 @@ const ProductPage = async ({
               </div>
             ))}
           </div>
-          <div className="col-span-4">
-            <div className="flex gap-4 flex-wrap items-start justify-start">
+          <div className="col-span-5 md:col-span-4">
+            <div className="grid grid-cols-2 md:flex gap-4 flex-wrap items-start justify-start">
               {products?.results.map((product: any, key: number) => (
-                <ProductCard product={product} key={key} />
+                <div className="col-span-1">
+                  <ProductCard product={product} key={key} />
+                </div>
               ))}
             </div>
           </div>

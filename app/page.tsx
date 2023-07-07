@@ -17,9 +17,9 @@ const Home = async () => {
       <Popular />
 
       {/* Diferentes */}
-      <section className="h-[500px] flex items-center justify-center">
+      <section className="h-[400px] md:h-[500px] flex items-center justify-center">
         <div className="container mx-auto grid grid-cols-2 gap-x-32">
-          <div className="col-span-1 flex flex-col gap-y-8">
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-y-8">
             <div className="flex flex-col gap-y-4">
               <h1>¿Que nos hace diferentes?</h1>
               <p>
@@ -30,9 +30,14 @@ const Home = async () => {
             </div>
             <Button label="Ver Productos" href="/productos" rotation={-45} />
           </div>
-          <div className="col-span-1 flex items-center justify-end object-contain">
-            <div className="relative h-[350px] w-[550px]">
-              <Image src="/images/img-1.jpg" fill alt="image" />
+          <div className="hidden md:col-span-1 md:flex items-center justify-end object-contain">
+            <div className="relative h-[350px] w-full md:w-[550px]">
+              <Image
+                className="rounded-4xl"
+                src="/images/img-1.jpg"
+                fill
+                alt="image"
+              />
             </div>
           </div>
         </div>
