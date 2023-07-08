@@ -56,14 +56,14 @@ const Nav = () => {
           <SearchBar />
           <Link
             href="/"
-            className="bg-white rounded-full p-2 hover:text-red-500"
+            className="bg-white rounded-full p-2 hover:text-red-500 shadow-sm"
           >
             <Heart size={18} />
           </Link>
-          <Link href="/" className="bg-white rounded-full p-2">
+          <Link href="/" className="bg-white rounded-full p-2 shadow-sm">
             <User size={18} />
           </Link>
-          <Link href="/carrito" className="bg-white rounded-full p-2">
+          <Link href="/carrito" className="bg-white rounded-full p-2 shadow-sm">
             <ShoppingBag size={18} />
           </Link>
         </div>

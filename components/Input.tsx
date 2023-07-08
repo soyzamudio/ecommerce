@@ -25,7 +25,7 @@ const Input = ({
           setValue("");
         }
       }}
-      className={`bg-white rounded-full flex items-center justify-center p-1 gap-x-2 ${
+      className={`bg-white rounded-full flex items-center justify-center p-1 gap-x-2 shadow-sm ${
         errorMessage ? "border border-red-500" : ""
       }`}
     >
