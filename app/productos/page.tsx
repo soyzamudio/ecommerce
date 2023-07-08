@@ -5,7 +5,33 @@ import {
   categoryTitle,
   categoryTree,
 } from "@lib/constants/categories";
+import { NEXT_URL } from "@lib/constants/global";
 import { getProducts } from "@lib/products";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "Ciclo Dispensary | %s",
+    default: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+  },
+  description: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: `${NEXT_URL}/productos`,
+    siteName: "Ciclo Dispensary",
+    title: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos | Productos",
+    description: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
+    images: [
+      {
+        url: `${NEXT_URL}/images/og-image-products-page.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos | Productos",
+      },
+    ],
+  },
+};
 
 const ProductPage = async ({
   searchParams,
