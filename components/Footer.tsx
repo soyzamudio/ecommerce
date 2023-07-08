@@ -1,13 +1,7 @@
 import Link from "next/link";
-import Input from "./Input";
-import { ArrowRight } from "lucide-react";
 import NewsletterEmail from "./NewsletterEmail";
 
 const Footer = () => {
-  const newsletterSubmit = () => {
-    console.log("submit");
-  };
-
   return (
     <footer>
       <section className="h-[150px] flex items-center justify-center font-fancy text-2xl leading-none">

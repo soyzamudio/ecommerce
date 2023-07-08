@@ -8,6 +8,7 @@ const NewsletterEmail = () => {
     e.preventDefault();
     console.log(value);
   }
+
   return (
     <Input
       placeholder="Correo electrónico"

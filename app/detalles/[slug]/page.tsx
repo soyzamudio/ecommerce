@@ -4,9 +4,7 @@ import ProductDetails from "@components/ProductDetail";
 import ProductImages from "@components/ProductImages";
 import { NEXT_URL } from "@lib/constants/global";
 import { getProductBySlug } from "@lib/products";
-import { Minus, Plus } from "lucide-react";
 import { Metadata } from "next";
-import Image from "next/image";
 import Script from "next/script";
 import { Image as iImage } from "swell-js";
 
@@ -111,7 +109,7 @@ const DetallesPage = async ({ params }: { params: { slug: string } }) => {
         <div className="flex flex-col gap-y-8">
           <h1 className="text-xl">Descripción</h1>
           <p
-            className="text-gray-500"
+            className="prose prose-stone max-w-none"
             dangerouslySetInnerHTML={
               {
                 __html: product.description,

@@ -29,7 +29,7 @@ const ProductImages = ({ images }: { images: iImage[] }) => {
                 }`}
                 src={image.file?.url as string}
                 fill
-                alt={image.caption as string}
+                alt="Product image"
               />
             </div>
           ))}
@@ -41,7 +41,7 @@ const ProductImages = ({ images }: { images: iImage[] }) => {
             className="tranisition-all duration-500 ease-in-out"
             src={mainImage.file?.url as string}
             fill
-            alt={mainImage.caption as string}
+            alt="Product image"
           />
         </div>
       </div>
