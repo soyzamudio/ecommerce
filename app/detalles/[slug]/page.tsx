@@ -2,6 +2,7 @@ import Breadcrumbs from "@components/Breadcrumbs";
 import ProductCard from "@components/ProductCard";
 import ProductDetails from "@components/ProductDetail";
 import ProductImages from "@components/ProductImages";
+import { NEXT_URL } from "@lib/constants/global";
 import { getProductBySlug } from "@lib/products";
 import { Minus, Plus } from "lucide-react";
 import { Metadata } from "next";
@@ -18,6 +19,26 @@ export async function generateMetadata({
   return {
     title: `${product.name} | ${(product.categories as any)[0].name}`,
     description: product.description,
+    openGraph: {
+      type: "website",
+      locale: "es_MX",
+      url: `${NEXT_URL}/detalles/${params.slug}`,
+      siteName: "Ciclo Dispensary",
+      title: `Ciclo Dispensary | ${product.name} | ${
+        (product.categories as any)[0].name
+      }`,
+      description: product.description,
+      images: [
+        {
+          url: (product.images as any)[0].file.url,
+          width: 1200,
+          height: 630,
+          alt: `Ciclo Dispensary | ${product.name} | ${
+            (product.categories as any)[0].name
+          }`,
+        },
+      ],
+    },
   };
 }
 
