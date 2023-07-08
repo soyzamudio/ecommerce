@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Input from "./Input";
 import { ArrowRight } from "lucide-react";
+import NewsletterEmail from "./NewsletterEmail";
 
 const Footer = () => {
   const newsletterSubmit = () => {
@@ -21,23 +22,25 @@ const Footer = () => {
             <div className="col-span-3 md:col-span-1">
               <h2 className="font-fancy text-lg mb-4">Compañía</h2>
               <div className="flex flex-col gap-y-2">
-                <div>Acerca de nosotros</div>
-                <div className="font-fancy">Dispensary+</div>
-                <div>Tarjeta de regalo</div>
+                <Link href="/nosotros">Acerca de nosotros</Link>
+                <Link href="/dispensary-plus" className="font-fancy">
+                  Dispensary+
+                </Link>
+                <Link href="/">Tarjeta de regalo</Link>
               </div>
             </div>
             <div className="col-span-3 md:col-span-1">
               <h2 className="font-fancy text-lg mb-4">Ayuda</h2>
               <div className="flex flex-col gap-y-2">
-                <div>Preguntas frecuentes</div>
-                <div>Envios y devoluciones</div>
-                <div>Facturar pedido</div>
+                <Link href="/">Preguntas frecuentes</Link>
+                <Link href="/">Envios y devoluciones</Link>
+                <Link href="/">Facturar pedido</Link>
               </div>
             </div>
             <div className="col-span-3 md:col-span-1">
               <h2 className="font-fancy text-lg mb-4">Contacto</h2>
               <div className="flex flex-col gap-y-2">
-                <div>Contactanos</div>
+                <Link href="/">Contactanos</Link>
                 <div>hola@ciclodispensary.com</div>
               </div>
             </div>
@@ -47,9 +50,7 @@ const Footer = () => {
               <h2 className="font-fancy text-xl">
                 Suscribete para recibir actualizaciones y ofertas
               </h2>
-              <Input placeholder="Correo electrónico" type="email">
-                <ArrowRight size={20} />
-              </Input>
+              <NewsletterEmail />
             </div>
           </div>
         </div>

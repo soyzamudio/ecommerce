@@ -86,6 +86,7 @@ export const categoryShortDescription: { [key: string]: string } = {
   'piel-grasa': 'Controla el brillo y equilibra tu piel con nuestros productos especialmente diseñados para la piel grasa. Experimenta una piel más suave y menos grasa con cada uso.',
   'piel-seca': 'Descubre el alivio y la hidratación intensiva con nuestros productos para el cuidado de la piel seca. Diseñados para nutrir y reparar, devuelven la vitalidad a tu piel, dejándola suave y radiante.',
   'piel-mixta': 'Para aquellos con piel mixta, encontrar el equilibrio perfecto en su rutina de cuidado de la piel puede ser un desafío. Nuestros productos están diseñados para hidratar las áreas secas y controlar el brillo en las zonas grasas, proporcionando un cutis equilibrado y radiante.',
+  humectacion: 'Nuestros productos de humectación son esenciales para mantener una piel saludable y radiante. Formulados para diferentes tipos de piel, estos productos hidratan profundamente, dejando la piel suave y flexible.',
   default: 'Descubre la gama completa de nuestros productos de cuidado facial, diseñados para nutrir, proteger y mejorar tu piel. Desde limpiadores y tónicos hasta sueros y protectores solares, tenemos todo lo que necesitas para una piel saludable y radiante'
 };
 
@@ -97,6 +98,7 @@ export const categoryTitle: { [key: string]: string } = {
   'protector-solar': 'Protector Solar',
   'aceites-faciales': 'Aceites Faciales',
   tonicos: 'Tónicos',
+  humectacion: 'Humectación',
   'piel-grasa': 'Piel Grasa',
   'piel-seca': 'Piel Seca',
   'piel-mixta': 'Piel Mixta',

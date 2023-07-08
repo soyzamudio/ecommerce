@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "slide-left": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        "slide-left": "slide-left 20s linear infinite",
+      },
       borderRadius: {
         "4xl": "2rem",
       },
@@ -16,9 +25,9 @@ module.exports = {
       container: {
         padding: {
           DEFAULT: "1rem",
-          sm: "2rem",
-          lg: "4rem",
-          xl: "5rem",
+          sm: "0rem",
+          lg: "2rem",
+          xl: "2rem",
           "2xl": "6rem",
         },
       },

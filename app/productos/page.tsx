@@ -12,12 +12,16 @@ const ProductPage = async ({
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) => {
-  let category;
+  let category, search;
   if (searchParams?.category) {
     category = searchParams?.category as string;
   }
 
-  const products = await getProducts({ category });
+  if (searchParams?.buscar) {
+    search = searchParams?.buscar as string;
+  }
+
+  const products = await getProducts({ category, search });
 
   return (
     <>
@@ -64,7 +68,13 @@ const ProductPage = async ({
                 </div>
               ))}
             </div>
-            <div className="col-span-5 md:col-span-4">
+            <div className="col-span-5 md:col-span-4 flex flex-col gap-y-4">
+              {search && (
+                <div className="flex items-center gap-x-2">
+                  <h4 className="font-bold">Buscaste:</h4>
+                  <h4 className="font-bold text-gray-700">{search}</h4>
+                </div>
+              )}
               <div className="grid grid-cols-2 md:flex gap-4 flex-wrap">
                 {products?.results.map((product: any, key: number) => (
                   <div className="col-span-1 flex">

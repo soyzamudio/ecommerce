@@ -9,11 +9,13 @@ export async function getProducts({
   page = 1,
   limit = 20,
   search = "",
+  tag,
   category,
 }: {
   page?: number;
   limit?: number;
   search?: string;
+  tag?: string;
   category?: string;
 }) {
   const params: any = {
@@ -25,6 +27,10 @@ export async function getProducts({
 
   if (category) {
     params["category"] = category;
+  }
+
+  if (tag) {
+    params["tags"] = tag;
   }
 
   return swell.products.list(params);

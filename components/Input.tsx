@@ -1,19 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Input = ({
   placeholder,
   children,
   type = "text",
+  clearOnSubmit = false,
+  handleSubmit = () => {},
 }: {
   placeholder: string;
   children: any;
   type?: string;
+  clearOnSubmit?: boolean;
+  handleSubmit?: (e?: any, value?: any) => void;
 }) => {
   const [errorMessage, setErrorMessage] = useState("");
+  const [value, setValue] = useState("");
   return (
-    <div
+    <form
+      onSubmit={(e) => {
+        handleSubmit(e, value);
+        if (clearOnSubmit) {
+          setValue("");
+        }
+      }}
       className={`bg-white rounded-full flex items-center justify-center p-1 gap-x-2 ${
         errorMessage ? "border border-red-500" : ""
       }`}
@@ -21,17 +32,24 @@ const Input = ({
       <input
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
         className="w-[300px] ml-4 p-1 focus:outline-none"
       />
       <button
         className="bg-footer rounded-full p-2 hover:brightness-95 transition-all"
-        onClick={() => {
-          console.log("Submit");
+        onClick={(e) => {
+          handleSubmit(e, value);
+          if (clearOnSubmit) {
+            setValue("");
+          }
         }}
       >
         {children}
       </button>
-    </div>
+    </form>
   );
 };
 

@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 import { NEXT_URL } from "@lib/constants/global";
+import Ribbon from "@components/Ribbon";
 
 interface LayoutProps {
   children?: ReactNode;
@@ -46,6 +47,7 @@ const RootLayout: FC<LayoutProps> = ({ children }) => {
       className={`${classicalRomance.variable} bg-off-white h-screen`}
     >
       <body className="flex flex-col h-full">
+        <Ribbon />
         <Nav />
         <main className="flex flex-col flex-1 w-full">{children}</main>
         <Footer />

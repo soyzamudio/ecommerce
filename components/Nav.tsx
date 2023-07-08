@@ -1,3 +1,4 @@
+import { MENU_PRODUCTS_ITEMS } from "@lib/constants/menu";
 import {
   ChevronDown,
   Heart,
@@ -8,7 +9,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import MegaMenu from "./MegaMenu";
-import { MENU_PRODUCTS_ITEMS } from "@lib/constants/menu";
+import SearchBar from "./SearchBar";
 
 const Nav = () => {
   return (
@@ -51,10 +52,8 @@ const Nav = () => {
             <div>dispensary</div>
           </Link>
         </div>
-        <div className="flex flex-1 items-end justify-end gap-x-4">
-          <Link href="/" className="bg-white rounded-full p-2">
-            <Search size={18} />
-          </Link>
+        <div className="flex flex-1 items-center justify-end gap-x-4">
+          <SearchBar />
           <Link
             href="/"
             className="bg-white rounded-full p-2 hover:text-red-500"
