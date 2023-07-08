@@ -5,34 +5,34 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: { slug: string };
-// }): Promise<Metadata> {
-//   const data = await blogPost(params.slug);
-//   const post = data.blogPost.posts[0];
-//   return {
-//     title: `${post?.title} | Blog`,
-//     description: post?.excerpt,
-//     openGraph: {
-//       type: "website",
-//       locale: "es_MX",
-//       url: `${NEXT_URL}/blog/${params.slug}`,
-//       siteName: "Ciclo Dispensary",
-//       title: `Ciclo Dispensary | ${post?.title} | Blog`,
-//       description: post?.excerpt,
-//       images: [
-//         {
-//           url: post?.feature_image,
-//           width: 1200,
-//           height: 630,
-//           alt: `Ciclo Dispensary | ${post?.title} | Blog`,
-//         },
-//       ],
-//     },
-//   };
-// }
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const data = await blogPost(params.slug);
+  const post = data.blogPost.posts[0];
+  return {
+    title: `${post?.title} | Blog`,
+    description: post?.excerpt,
+    openGraph: {
+      type: "website",
+      locale: "es_MX",
+      url: `${NEXT_URL}/blog/${params.slug}`,
+      siteName: "Ciclo Dispensary",
+      title: `Ciclo Dispensary | ${post?.title} | Blog`,
+      description: post?.excerpt,
+      images: [
+        {
+          url: post?.feature_image,
+          width: 1200,
+          height: 630,
+          alt: `Ciclo Dispensary | ${post?.title} | Blog`,
+        },
+      ],
+    },
+  };
+}
 
 async function blogPost(slug: string) {
   const blogPost = await fetch(`${NEXT_URL}/api/blog/posts/${slug}`, {
