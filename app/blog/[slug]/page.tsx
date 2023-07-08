@@ -25,6 +25,8 @@ export async function generateMetadata({
       images: [
         {
           url: post.feature_image,
+          width: 1200,
+          height: 630,
           alt: `Ciclo Dispensary | ${post.title} | Blog`,
         },
       ],
