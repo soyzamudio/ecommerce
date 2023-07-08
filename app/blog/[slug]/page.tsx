@@ -13,21 +13,21 @@ export async function generateMetadata({
   const data = await blogPost(params.slug);
   const post = data.blogPost.posts[0];
   return {
-    title: `${post.title} | Blog`,
-    description: post.excerpt,
+    title: `${post?.title} | Blog`,
+    description: post?.excerpt,
     openGraph: {
       type: "website",
       locale: "es_MX",
       url: `${NEXT_URL}/blog/${params.slug}`,
       siteName: "Ciclo Dispensary",
-      title: `Ciclo Dispensary | ${post.title} | Blog`,
-      description: post.excerpt,
+      title: `Ciclo Dispensary | ${post?.title} | Blog`,
+      description: post?.excerpt,
       images: [
         {
-          url: post.feature_image,
+          url: post?.feature_image,
           width: 1200,
           height: 630,
-          alt: `Ciclo Dispensary | ${post.title} | Blog`,
+          alt: `Ciclo Dispensary | ${post?.title} | Blog`,
         },
       ],
     },
