@@ -17,6 +17,7 @@ const classicalRomance = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(NEXT_URL),
   title: {
     template: "Ciclo Dispensary | %s",
     default: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",

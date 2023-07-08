@@ -10,10 +10,8 @@ import { getProducts } from "@lib/products";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: {
-    template: "Ciclo Dispensary | %s",
-    default: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
-  },
+  metadataBase: new URL(`${NEXT_URL}/productos`),
+  title: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
   description: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
   openGraph: {
     type: "website",

@@ -13,6 +13,7 @@ export async function generateMetadata({
   const data = await blogPost(params.slug);
   const post = data.blogPost.posts[0];
   return {
+    metadataBase: new URL(`${NEXT_URL}/blog/${params.slug}`),
     title: `${post?.title} | Blog`,
     description: post?.excerpt,
     openGraph: {

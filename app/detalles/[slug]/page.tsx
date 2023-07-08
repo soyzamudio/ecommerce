@@ -15,6 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const product = await getProductBySlug(params.slug);
   return {
+    metadataBase: new URL(`${NEXT_URL}/detalles/${params.slug}`),
     title: `${product.name} | ${(product.categories as any)[0].name}`,
     description: product.description,
     openGraph: {
