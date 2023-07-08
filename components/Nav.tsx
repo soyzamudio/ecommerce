@@ -13,7 +13,7 @@ import SearchBar from "./SearchBar";
 
 const Nav = () => {
   return (
-    <header className="py-4 sticky top-0 z-50 bg-off-white">
+    <header className="py-4 sticky top-0 z-50 bg-off-white shadow-sm">
       <div className="md:hidden flex items-center justify-between container mx-auto">
         <div className="font-fancy flex text-xl items-center justify-center leading-none gap-x-4">
           <Menu size={24} />
