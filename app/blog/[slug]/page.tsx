@@ -1,4 +1,8 @@
 import { NEXT_URL } from "@lib/constants/global";
+import { formatDate } from "@lib/utils";
+import Link from "next/link";
+import Image from "next/image";
+import Popular from "@components/Popular";
 
 async function blogPost(slug: string) {
   const blogPost = await fetch(`${NEXT_URL}/api/blog/posts/${slug}`, {
@@ -15,16 +19,74 @@ async function blogPost(slug: string) {
   });
   const blogPostListData = await blogPostList.json();
   const blogPostData = await blogPost.json();
-  return { blogPost: blogPostData.data, blogPostList: blogPostListData.data };
+  return { blog: blogPostData.data, list: blogPostListData.data };
 }
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
-  const data = await blogPost(params.slug);
-  console.log(data);
+  const { blog, list } = await blogPost(params.slug);
   return (
-    <section>
-      <div className="container mx-auto">
-        <h1>BlogPostPage {JSON.stringify(data)}</h1>
+    <section className="container mx-auto py-8 flex flex-col gap-y-4">
+      <div className="grid grid-cols-4">
+        <div className="col-span-1">
+          <div className="flex flex-col gap-y-4 pr-8">
+            <div className="font-semibold font-sans">Artículos recientes</div>
+            {list.posts.map((post: any, key: number) => (
+              <Link
+                href={`/blog/${post.slug}`}
+                key={key}
+                className="flex flex-col gap-y-2"
+              >
+                <div className="font-semibold font-sans text-black">
+                  {post.title}
+                </div>
+                <div className="text-xs uppercase">
+                  Publicado:{" "}
+                  <span className="font-semibold">
+                    {formatDate(post.created_at)}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="grid col-span-3">
+          <div className="flex flex-col gap-y-2 mb-2">
+            <h1 className="font-semibold font-sans capitalize text-5xl leading-tight">
+              {blog.posts[0].title}
+            </h1>
+            <div className="flex items-center gap-x-2">
+              <div className="text-sm uppercase">
+                Publicado:{" "}
+                <span className="font-semibold">
+                  {formatDate(blog.posts[0].created_at)}
+                </span>
+              </div>{" "}
+              •
+              <div className="text-sm uppercase">
+                Tiempo de lectura:{" "}
+                <span className="font-semibold">
+                  {blog.posts[0].reading_time} minutos
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <div className="relative object-contain h-[400px] w-full aspect-auto">
+              <Image
+                src={blog.posts[0].feature_image}
+                fill
+                className="object-cover"
+                alt={blog.posts[0].title}
+              />
+            </div>
+            <div className="prose prose-stone lg:prose-xl max-w-none">
+              <div dangerouslySetInnerHTML={{ __html: blog.posts[0].html }} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <Popular />
       </div>
     </section>
   );
