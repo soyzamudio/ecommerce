@@ -1,8 +1,30 @@
-const BlogPostPage = ({ params }: { params: { slug: string } }) => {
+import { NEXT_URL } from "@lib/constants/global";
+
+async function blogPost(slug: string) {
+  const blogPost = await fetch(`${NEXT_URL}/api/blog/posts/${slug}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const blogPostList = await fetch(`${NEXT_URL}/api/blog/posts`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const blogPostListData = await blogPostList.json();
+  const blogPostData = await blogPost.json();
+  return { blogPost: blogPostData.data, blogPostList: blogPostListData.data };
+}
+
+const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
+  const data = await blogPost(params.slug);
+  console.log(data);
   return (
     <section>
       <div className="container mx-auto">
-        <h1>BlogPostPage {params.slug}</h1>
+        <h1>BlogPostPage {JSON.stringify(data)}</h1>
       </div>
     </section>
   );
