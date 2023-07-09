@@ -1,3 +1,5 @@
+"use client";
+
 import { NEXT_URL } from "@lib/constants/global";
 import { formatDate, truncate } from "@lib/utils";
 import Image from "next/image";
@@ -16,12 +18,11 @@ async function blogPosts() {
 
 const BlogPage = async () => {
   const data = await blogPosts();
-  const posts = data?.posts;
   return (
     <div className="container mx-auto flex flex-col gap-y-10 py-8">
       <h1 className="font-fancy text-4xl">Blog</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {posts?.map((post: any, key: number) => (
+        {data?.posts.map((post: any, key: number) => (
           <Link
             href={`/blog/${post.slug}`}
             className="flex flex-col col-span-1 w-full bg-white shadow rounded-lg"
