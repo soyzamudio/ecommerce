@@ -1,7 +1,7 @@
+import { getProductBySlug } from "@lib/products";
+import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, Heart, ShoppingCart } from "lucide-react";
-import { getProductBySlug } from "@lib/products";
 
 const ProductCard = async ({
   product,
