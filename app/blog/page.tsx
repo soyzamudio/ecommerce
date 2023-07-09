@@ -1,4 +1,20 @@
-const BlogPage = () => {
+import { NEXT_URL } from "@lib/constants/global";
+
+async function blogPosts() {
+  const res = await fetch(`${NEXT_URL}/api/blog/posts`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await res?.json();
+  return data.data;
+}
+
+const BlogPage = async () => {
+  const data = await blogPosts();
+  console.log(data.posts);
+
   return (
     <section>
       <div className="container mx-auto">
