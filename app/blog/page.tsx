@@ -12,7 +12,7 @@ async function blogPosts() {
       "Content-Type": "application/json",
     },
   });
-  const data = await res.json();
+  const data = await res?.json();
   return data.data;
 }
 
