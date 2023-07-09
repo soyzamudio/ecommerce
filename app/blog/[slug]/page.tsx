@@ -1,9 +1,9 @@
 import Popular from "@components/Popular";
 import { NEXT_URL } from "@lib/constants/global";
 import { formatDate } from "@lib/utils";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
 
 export async function generateMetadata({
   params,

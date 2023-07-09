@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
     images: [
       {
-        url: `${NEXT_URL}/images/og-image-home-page.jpg`,
+        url: `/images/og-image-home-page.jpg`,
         width: 1200,
         height: 630,
         alt: "Ciclo Dispensary | Cuidamos tu piel y sus ciclos",
