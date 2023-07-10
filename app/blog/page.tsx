@@ -11,20 +11,20 @@ async function blogPosts() {
     },
   });
 
-  const fetchTags = await fetch(`${NEXT_URL}/api/blog/tags`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  // const fetchTags = await fetch(`${NEXT_URL}/api/blog/tags`, {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // });
 
-  const tags = await fetchTags?.json();
+  // const tags = await fetchTags?.json();
   const posts = await fetchPosts?.json();
-  return { postData: posts.data, tagsData: tags.data };
+  return { postData: posts.data };
 }
 
 const BlogPage = async () => {
-  const { postData, tagsData } = await blogPosts();
+  const { postData } = await blogPosts();
 
   return (
     <>
@@ -32,8 +32,7 @@ const BlogPage = async () => {
         <div className="gradient absolute bottom-0 bg-gradient-to-bl from-off-white via-transparent to-off-white h-full w-full z-0"></div>
         <div className="gradient absolute bottom-0 bg-gradient-to-br from-transparent via-off-white to-transparent opacity-90 h-full w-full z-0"></div>
       </section>
-      <section className="container mx-auto">
-        {/* tag pills with Link */}
+      {/* <section className="container mx-auto">
         <div className="flex gap-x-2 items-center justify-center py-4">
           {tagsData.tags.map((tag: any, key: number) => (
             <Link
@@ -54,7 +53,7 @@ const BlogPage = async () => {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
       <section className="container mx-auto flex flex-col gap-y-10 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {postData.posts.map((post: any, key: number) => (
