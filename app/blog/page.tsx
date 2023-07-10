@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function blogPosts() {
-  const fetchPosts = await fetch(`${NEXT_URL}/api/blog/posts`, {
+  const fetchPosts = await fetch(`${NEXT_URL}/api/blog/posts/new`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
