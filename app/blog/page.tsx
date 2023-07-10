@@ -11,16 +11,16 @@ async function blogPosts() {
     },
   });
 
-  // const fetchTags = await fetch(`${NEXT_URL}/api/blog/tags`, {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
+  const fetchTags = await fetch(`${NEXT_URL}/api/blog/tags`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-  // const tags = await fetchTags?.json();
+  const tags = await fetchTags?.json();
   const posts = await fetchPosts?.json();
-  return { postData: posts.data };
+  return { postData: posts.data, tagsData: tags.data };
 }
 
 const BlogPage = async () => {
