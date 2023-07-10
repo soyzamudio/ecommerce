@@ -30,7 +30,7 @@ const BlogPage = async () => {
   return (
     <>
       <section className="relative pattern--white py-12">
-        {/* <div className="relative container mx-auto z-10 flex flex-col gap-y-4">
+        <div className="relative container mx-auto z-10 flex flex-col gap-y-4">
           <h1>Blog de belleza y cuidado</h1>
           <div className="flex justify-between items-center">
             <h2 className="text-2xl text-gray-400">
@@ -45,7 +45,7 @@ const BlogPage = async () => {
               <Twitter />
             </Link>
           </div>
-        </div> */}
+        </div>
         <div className="gradient absolute bottom-0 bg-gradient-to-bl from-off-white via-transparent to-off-white h-full w-full z-0"></div>
         <div className="gradient absolute bottom-0 bg-gradient-to-br from-transparent via-off-white to-transparent opacity-90 h-full w-full z-0"></div>
       </section>
