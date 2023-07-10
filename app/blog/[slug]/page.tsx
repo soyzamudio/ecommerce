@@ -58,7 +58,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <section className="container mx-auto py-8 flex flex-col gap-y-4">
       <div className="grid grid-cols-4">
-        <div className="col-span-1">
+        <div className="col-span-1 hidden md:flex">
           <div className="flex flex-col gap-y-4 pr-8">
             <div className="font-semibold font-sans">Artículos recientes</div>
             {list.posts.map((post: any, key: number) => (
@@ -80,8 +80,20 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
             ))}
           </div>
         </div>
-        <div className="grid col-span-3">
+        <div className="grid col-span-4 md:col-span-3">
           <div className="flex flex-col gap-y-2 mb-2">
+            <div className="flex gap-x-1 text-sm">
+              <Link className="text-gray-400" href="/blog">
+                Blog
+              </Link>
+              <span className="text-gray-400">/</span>
+              <Link
+                href={`${NEXT_URL}/blog/${blog.posts[0].title}`}
+                className="font-semibold text-gray-700"
+              >
+                {blog.posts[0].title}
+              </Link>
+            </div>
             <h1 className="font-semibold font-sans capitalize text-5xl leading-tight">
               {blog.posts[0].title}
             </h1>

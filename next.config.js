@@ -8,6 +8,7 @@ const nextConfig = {
       "cdn.swell.store",
       "placehold.co",
       "images.unsplash.com",
+      "ciclo-dispensary.ghost.io",
     ],
   },
   experimental: {
