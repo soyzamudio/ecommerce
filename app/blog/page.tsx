@@ -1,10 +1,11 @@
+import Twitter from "@components/icons/Twitter";
 import { NEXT_URL } from "@lib/constants/global";
 import { formatDate, truncate } from "@lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
 async function blogPosts() {
-  const fetchPosts = await fetch(`${NEXT_URL}/api/blog/posts`, {
+  const fetchPosts = await fetch(`${NEXT_URL}/api/blog/posts/new`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -28,16 +29,32 @@ const BlogPage = async () => {
 
   return (
     <>
-      <section className="relative pattern--white h-[400px]">
+      <section className="relative pattern--white py-12">
+        <div className="relative container mx-auto z-10 flex flex-col gap-y-4">
+          <h1>Blog de belleza y cuidado</h1>
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl text-gray-400">
+              Secretos esenciales para una piel radiante.
+            </h2>
+            <Link
+              className="text-blue-600 flex gap-x-2 items-center"
+              href="https://twitter.com/ciclo.dispensary"
+              target="_blank"
+            >
+              <div>Sigue @Ciclo.Dispensary en Twitter</div>
+              <Twitter />
+            </Link>
+          </div>
+        </div>
         <div className="gradient absolute bottom-0 bg-gradient-to-bl from-off-white via-transparent to-off-white h-full w-full z-0"></div>
         <div className="gradient absolute bottom-0 bg-gradient-to-br from-transparent via-off-white to-transparent opacity-90 h-full w-full z-0"></div>
       </section>
       <section className="container mx-auto">
-        <div className="flex gap-x-2 items-center justify-center py-4">
+        <div className="flex gap-x-8 items-center justify-center py-4">
           {tagsData.tags.map((tag: any, key: number) => (
             <Link
               href={`/blog/tags/${tag.slug}`}
-              className="flex flex-col gap-y-2 items-center px-4 py-2 bg-white hover:bg-gray-100 rounded-lg"
+              className="flex flex-col gap-y-2 items-center px-4 py-2 bg-white rounded-lg shadow-sm hover:shadow transition-all"
             >
               <div className="relative object-contain h-10 w-10 aspect-auto">
                 <Image
@@ -47,7 +64,7 @@ const BlogPage = async () => {
                   alt={tag.name}
                 />
               </div>
-              <div className="text-sm font-semibold uppercase" key={key}>
+              <div className="text-sm font-fancy uppercase" key={key}>
                 {tag.name}
               </div>
             </Link>
