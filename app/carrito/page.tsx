@@ -1,9 +1,11 @@
-const page = () => {
+import Cart from "@components/Cart";
+
+const CartPage = async () => {
   return (
     <div className="container mx-auto">
-      <h1 className="font-fancy text-4xl">Carrito</h1>
+      <Cart />
     </div>
   );
 };
 
-export default page;
+export default CartPage;

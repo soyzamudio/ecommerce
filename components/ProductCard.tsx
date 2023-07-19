@@ -1,7 +1,8 @@
 import { getProductBySlug } from "@lib/products";
-import { Eye, Heart } from "lucide-react";
+import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteProduct from "./FavoriteProduct";
 
 const ProductCard = async ({
   product,
@@ -12,6 +13,10 @@ const ProductCard = async ({
 }) => {
   if (productId && !product) {
     product = await getProductBySlug(productId);
+  }
+
+  if (product.id) {
+    productId = product.id;
   }
 
   return (
@@ -40,9 +45,7 @@ const ProductCard = async ({
           <div>Vista Rapida</div>
           <Eye size={16} strokeWidth={2} />
         </Link>
-        <div className="absolute right-2 top-2 z-40 bg-white bg-opacity-30 hover:bg-opacity-50 backdrop-blur-lg p-1.5 rounded-lg transition-backgroundColor ease-in-out duration-500 hover:shadow-lg cursor-pointer">
-          <Heart size={14} />
-        </div>
+        <FavoriteProduct productId={productId as string} />
       </div>
       <Link
         href={`/detalles/${product.slug}`}

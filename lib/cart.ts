@@ -5,8 +5,8 @@ swell.init("coracosmetics", "pk_ZUb02oMLQ1vp6XgXTUUUUJWeieKWy4xg", {
   useCamelCase: true,
 });
 
-export function getCart() {
-  return swell.cart.get();
+export async function getCart() {
+  return await swell.cart.get();
 }
 
 export function addToCart({

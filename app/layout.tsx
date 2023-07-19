@@ -6,6 +6,11 @@ import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 import { NEXT_URL } from "@lib/constants/global";
 import Ribbon from "@components/Ribbon";
+import swell from "swell-js";
+
+swell.init("coracosmetics", "pk_ZUb02oMLQ1vp6XgXTUUUUJWeieKWy4xg", {
+  useCamelCase: true,
+});
 
 interface LayoutProps {
   children?: ReactNode;
@@ -45,9 +50,9 @@ const RootLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <html
       lang="es"
-      className={`${classicalRomance.variable} bg-off-white h-screen`}
+      className={`app ${classicalRomance.variable} bg-off-white h-screen`}
     >
-      <body className="flex flex-col">
+      <body className="flex flex-col min-h-screen">
         <Ribbon />
         <Nav />
         <main className="flex flex-col flex-1 w-full">{children}</main>

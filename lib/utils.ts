@@ -19,3 +19,14 @@ export function truncate(str: string, n = 150){
 export function formatDate(date: string){
   return new Date(date).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
 }
+
+// test results from answers
+// example: { "a": 3, "b": 2, "c": 0 } => "Piel Grasa"
+// example: { "a": 0, "b": 2, "c": 3 } => "Piel Mixta/Normal"
+// example: { "a": 0, "b": 4, "c": 2 } => "Piel Seca"
+export function getResults(answers: { a: number, b: number, c: number }) {
+  const { a, b, c } = answers;
+  if (a > b && a > c) return 'Piel Grasa';
+  if (b > a && b > c) return 'Piel Seca';
+  return 'Piel Mixta';
+}
