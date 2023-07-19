@@ -4,7 +4,7 @@ const Ribbon = () => {
   return (
     <Link
       href="/productos?tags=descuento"
-      className="bg-sage text-white font-semibold text-sm py-2 text-center hover: hover:text-gray-100"
+      className="bg-sage text-white font-semibold text-sm py-2 text-center hover:text-gray-100 -z-40 hidden md:block"
     >
       <div className="container mx-auto">
         🔥 🔥 🔥 ¡Haz click y aprovecha nuestras ofertas! Descuentos increíbles

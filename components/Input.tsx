@@ -36,7 +36,7 @@ const Input = ({
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        className="w-[300px] ml-4 p-1 focus:outline-none"
+        className="max-w-[300px] ml-4 p-1 focus:outline-none"
       />
       <button
         className="bg-footer rounded-full p-2 hover:brightness-95 transition-all"

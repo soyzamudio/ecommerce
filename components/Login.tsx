@@ -12,7 +12,6 @@ const Login = ({ cb }: { cb: any }) => {
   async function handleSubmit(e: any) {
     e.preventDefault();
     const res = await login({ email, password });
-    console.log(res);
     cb();
   }
 

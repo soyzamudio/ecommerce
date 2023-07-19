@@ -12,8 +12,8 @@ const Footer = () => {
       </section>
       <section className="bg-footer py-8 pb-28">
         <div className="grid grid-cols-5 container mx-auto gap-y-8">
-          <div className="col-span-5 md:col-span-3 grid grid-cols-3 order-2 md:order-1 gap-y-6">
-            <div className="col-span-3 md:col-span-1">
+          <div className="col-span-5 md:col-span-3 grid grid-cols-2 md:grid-cols-3 order-2 md:order-1 gap-y-6">
+            <div className="col-span-1">
               <h2 className="font-fancy text-lg mb-4">Compañía</h2>
               <div className="flex flex-col gap-y-2">
                 <Link href="/nosotros">Acerca de nosotros</Link>
@@ -23,7 +23,7 @@ const Footer = () => {
                 <Link href="/">Tarjeta de regalo</Link>
               </div>
             </div>
-            <div className="col-span-3 md:col-span-1">
+            <div className="col-span-1">
               <h2 className="font-fancy text-lg mb-4">Ayuda</h2>
               <div className="flex flex-col gap-y-2">
                 <Link href="/">Preguntas frecuentes</Link>
@@ -31,7 +31,7 @@ const Footer = () => {
                 <Link href="/">Facturar pedido</Link>
               </div>
             </div>
-            <div className="col-span-3 md:col-span-1">
+            <div className="col-span-1">
               <h2 className="font-fancy text-lg mb-4">Contacto</h2>
               <div className="flex flex-col gap-y-2">
                 <Link href="/">Contactanos</Link>
@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-span-5 md:col-span-2 order-1 md:order-2">
-            <div className="flex flex-col items-end justify-center gap-y-4">
+            <div className="flex flex-col items-start md:items-end justify-center gap-y-4">
               <h2 className="font-fancy text-xl">
                 Suscribete para recibir actualizaciones y ofertas
               </h2>
