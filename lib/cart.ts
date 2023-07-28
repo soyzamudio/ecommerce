@@ -5,8 +5,8 @@ swell.init("coracosmetics", "pk_ZUb02oMLQ1vp6XgXTUUUUJWeieKWy4xg", {
   useCamelCase: true,
 });
 
-export async function getCart() {
-  return await swell.cart.get();
+export function getCart() {
+  return swell.cart.get();
 }
 
 export function addToCart({
@@ -21,6 +21,22 @@ export function addToCart({
   return swell.cart.addItem({
     productId,
     variantId,
+    quantity,
+  });
+}
+
+export function removeItem(variantId: string) {
+  return swell.cart.removeItem(variantId);
+}
+
+export function updateCartItem({
+  variantId,
+  quantity,
+}: {
+  variantId: string;
+  quantity: number;
+}) {
+  return swell.cart.updateItem(variantId, {
     quantity,
   });
 }

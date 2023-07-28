@@ -1,19 +1,16 @@
 "use client";
 
+import { CartStore } from "@context/CartStore";
 import Link from "next/link";
-import swell from "swell-js";
+import { useContext } from "react";
 import CartItem from "./CartItem";
-import { useEffect, useState } from "react";
 
 const FREE_SHIPPING_THRESHOLD = 500;
 
-const getCartData = async (): Promise<swell.Cart> => {
-  const data = await swell.cart.get();
-  return data as swell.Cart;
-};
-
 const Cart = async () => {
-  const cart = await getCartData();
+  const {
+    state: { cart },
+  } = useContext(CartStore);
 
   function getFreeShippingDifference(subtotal: number) {
     return FREE_SHIPPING_THRESHOLD - subtotal;
@@ -42,20 +39,20 @@ const Cart = async () => {
     <section className="container mx-auto">
       <div className="flex flex-col gap-y-2 items-center p-4 py-12">
         <h1>Carrito</h1>
-        {getFreeShippingDifference(cart.subTotal as number) < 1 ? (
+        {getFreeShippingDifference(cart?.subTotal as number) < 1 ? (
           <p className="text-gray-400">¡Tienes envio gratis!</p>
         ) : (
           <p className="text-gray-400">
             ¡Te faltan $
             {getFreeShippingDifference(
-              cart.subTotal as number
+              cart?.subTotal as number
             ).toLocaleString()}{" "}
             para envio gratis!
           </p>
         )}
       </div>
       <div className="grid grid-cols-5 text-xs border-b p-4 text-gray-500 uppercase">
-        <div className="col-span-3">Productos ({cart.itemQuantity})</div>
+        <div className="col-span-3">Productos ({cart?.itemQuantity})</div>
         <div className="col-span-1 text-center">Cantidad</div>
         <div className="col-span-1 text-center">Total</div>
       </div>

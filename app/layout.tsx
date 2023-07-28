@@ -6,11 +6,7 @@ import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 import { NEXT_URL } from "@lib/constants/global";
 import Ribbon from "@components/Ribbon";
-import swell from "swell-js";
-
-swell.init("coracosmetics", "pk_ZUb02oMLQ1vp6XgXTUUUUJWeieKWy4xg", {
-  useCamelCase: true,
-});
+import { CartStoreContextProvider } from "@context/CartStore";
 
 interface LayoutProps {
   children?: ReactNode;
@@ -48,17 +44,19 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<LayoutProps> = ({ children }) => {
   return (
-    <html
-      lang="es"
-      className={`app ${classicalRomance.variable} bg-off-white h-screen`}
-    >
-      <body className="flex flex-col min-h-screen">
-        <Ribbon />
-        <Nav />
-        <main className="flex flex-col flex-1 w-full">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <CartStoreContextProvider>
+      <html
+        lang="es"
+        className={`app ${classicalRomance.variable} bg-off-white h-screen`}
+      >
+        <body className="flex flex-col min-h-screen">
+          <Ribbon />
+          <Nav />
+          <main className="flex flex-col flex-1 w-full">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </CartStoreContextProvider>
   );
 };
 

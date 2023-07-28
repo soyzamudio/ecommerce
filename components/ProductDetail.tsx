@@ -1,8 +1,9 @@
 "use client";
 
+import { CartStore } from "@context/CartStore";
 import { addToCart } from "@lib/cart";
 import { Minus, Plus } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Product } from "swell-js";
 
 const ProductDetails = ({
@@ -12,6 +13,7 @@ const ProductDetails = ({
   product: Product;
   selectedVariant: any;
 }) => {
+  const { state, dispatch } = useContext(CartStore);
   const [variant, setVariant] = useState(selectedVariant);
   const [quantity, setQuantity] = useState(1);
 
@@ -19,14 +21,14 @@ const ProductDetails = ({
     setVariant(variant);
   }
 
-  function additemToCart() {
+  function addItemToCart() {
     const obj = {
       productId: product.id as string,
       variantId: variant.id,
       quantity: quantity,
     };
 
-    addToCart(obj);
+    dispatch({ type: "ADD_TO_CART", payload: obj });
   }
 
   return (
@@ -103,7 +105,7 @@ const ProductDetails = ({
         <button
           className="p-3 bg-black text-white w-[350px] uppercase text-sm hover:bg-sage"
           onClick={() => {
-            additemToCart();
+            addItemToCart();
           }}
         >
           Agregar al carrito{" • "}

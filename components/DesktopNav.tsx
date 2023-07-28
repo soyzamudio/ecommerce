@@ -4,6 +4,7 @@ import Link from "next/link";
 import MegaMenu from "./MegaMenu";
 import SearchBar from "./SearchBar";
 import UserNav from "./UserNav";
+import CartNav from "./CartNav";
 
 const DesktopNav = () => {
   return (
@@ -39,9 +40,7 @@ const DesktopNav = () => {
           <Heart size={18} />
         </Link>
         <UserNav />
-        <Link href="/carrito" className="bg-white rounded-full p-2 shadow-sm">
-          <ShoppingBag size={18} />
-        </Link>
+        <CartNav />
       </div>
     </div>
   );
